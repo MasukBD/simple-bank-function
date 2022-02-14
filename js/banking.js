@@ -32,6 +32,14 @@ function updateNetBalance(amountChange, isadd) {
 
 }
 
+// #4 netBalance function for validation
+function getCurrentBalance() {
+    const netBalance = document.getElementById('total-balance');
+    const netBalanceText = netBalance.innerText;
+    const netBalanceAmount = parseFloat(netBalanceText);
+    return netBalanceAmount;
+}
+
 // deposit money functionality
 document.getElementById('deposit-button').addEventListener('click', function () {
 
@@ -58,8 +66,10 @@ document.getElementById('deposit-button').addEventListener('click', function () 
 
     // with function
     const deposited = getInputValue('deposit-input');
-    updateTotalAmount('total-deposit', deposited);
-    updateNetBalance(deposited, true);
+    if (deposited > 0) {
+        updateTotalAmount('total-deposit', deposited);
+        updateNetBalance(deposited, true);
+    }
 });
 
 // withdraw money functionality 
@@ -88,6 +98,9 @@ document.getElementById('Withdraw-button').addEventListener('click', function ()
     */
     // with function
     const newWithdrawAmount = getInputValue('withdraw-input');
-    updateTotalAmount('total-withdraw', newWithdrawAmount);
-    updateNetBalance(newWithdrawAmount, false);
+    const currentBalance = getCurrentBalance();
+    if (newWithdrawAmount > 0 && newWithdrawAmount < currentBalance) {
+        updateTotalAmount('total-withdraw', newWithdrawAmount);
+        updateNetBalance(newWithdrawAmount, false);
+    }
 });
