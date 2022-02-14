@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank-function</title>
+    <!-- tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="mt-16">
+        <h1 class="text-4xl font-semibold text-center">Welcome to <span class="text-lime-500">Global Islami
+                Bank</span>!
+        </h1>
+    </header>
+    <main class="w-4/5 mx-auto">
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-lime-600 rounded py-8">
+                    <h3 class="text-2xl font-medium text-center">Deposit</h3>
+                    <h3 class="text-3xl font-medium text-center">$ <span id="total-deposit">000</span></h3>
+                </div>
+                <div class="bg-teal-500 rounded py-8">
+                    <h3 class="text-2xl font-medium text-center">Withdraw</h3>
+                    <h3 class="text-3xl font-medium text-center">$ <span id="total-withdraw">000</span></h3>
+                </div>
+                <div class="bg-pink-600 rounded py-8">
+                    <h3 class="text-2xl font-medium text-center">Net Balance</h3>
+                    <h3 class="text-3xl font-medium text-center">$ <span id="total-balance">5750.75</span></h3>
+                </div>
+            </div>
+        </section>
+        <section class="mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="flex flex-col items-center bg-cyan-500 rounded">
+                    <h3 class="text-2xl mb-5">Please Enter Deposit Amount</h3>
+                    <div>
+                        <input id="deposit-input" class="block border-2 rounded-md mb-3 px-4" type="text"
+                            placeholder="Deposit Amount $$">
+                        <button id="deposit-button"
+                            class="bg-orange-400 px-3 py-1 rounded-md mb-2 font-medium ml-14">Deposit</button>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center bg-pink-700 rounded">
+                    <h3 class="text-2xl mb-5 text-white">Please Enter Withdraw Amount</h3>
+                    <div>
+                        <input id="withdraw-input" class="block border-2 rounded-md mb-3 px-4" type="text"
+                            placeholder="Withdraw Amount $$">
+                        <button id="Withdraw-button"
+                            class="bg-orange-400 px-3 py-1 rounded-md mb-2 font-medium ml-14">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/banking.js"></script>
+</body>
+
+</html>
